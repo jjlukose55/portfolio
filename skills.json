@@ -89,6 +89,20 @@
             ]
         }
       ]
+    },
+    {
+      "category_name": "Soft Skills",
+      "subcategories":[
+        {
+            "subcategory_name": "",
+            "skills": [
+                {
+                "skill_name": "React",
+                "context": "I have used this framework on multiple projects."
+                }
+            ]
+        }
+      ]
     }
   ]
 }
