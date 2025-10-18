@@ -1,39 +1,33 @@
 [
     {
-        "title": "Car Guy",
-        "description": "My car and what I have learned maintaining it.",
-        "tags": ["featured", "automotive", "hobbyist"],
-        "external_link": "https://github.com/jjlukose55/"
-    },
-    {
         "title": "Closet Database",
         "description": "A React Native app that doubles as an organization tool and a social media.",
-        "tags": ["per", "software"],
-        "external_link": "https://github.com/jjlukose55/"
+        "tags": ["software"],
+        "external_link": "https://github.com/jjlukose55/closet-database"
     },
     {
         "title": "Discord AI Agent",
         "description": "An agentic AI bot that can be interfaced through Discord.",
-        "tags": ["per", "software"],
-        "external_link": "https://github.com/jjlukose55/"
+        "tags": ["featured", "software"],
+        "external_link": ""
+    },
+    {
+        "title": "E-Bike Conversion",
+        "description": "A personal project to convert a pedal bike into an electric powered bike.",
+        "tags": ["hardware", "creative"],
+        "external_link": ""
     },
     {
         "title": "Home Lab",
         "description": "My personal labratory built on all the knowledge I have gathered as a computer engineer.",
-        "tags": ["featured", "hardware", "network", "hobbyist"],
-        "external_link": "https://github.com/jjlukose55/"
+        "tags": ["featured", "hardware", "network"],
+        "external_link": ""
     },
     {
         "title": "Investment Calculator",
         "description": "A paramaterized excel project that estimates an account's balance throughout it's life. Built as a predictor for Roth IRA growth.",
-        "tags": ["featured", "software", "hobbyist"],
+        "tags": ["software"],
         "external_link": "https://github.com/jjlukose55/rothiracalc"
-    },
-    {
-        "title": "My Website",
-        "description": "My personal website, written in HTML and JS and completely self-hosted.",
-        "tags": ["featured", "software", "network", "creative"],
-        "external_link": "https://github.com/jjlukose55/Portfolio_WebApp"
     },
     {
         "title": "Pantry Tracker",
@@ -42,21 +36,27 @@
         "external_link": "https://github.com/jjlukose55/pantry-tracker"
     },
     {
-        "title": "Research: \" \"",
-        "description": "",
-        "tags": ["research", "hardware"],
-        "external_link": "https://github.com/jjlukose55/"
+        "title": "Portfolio",
+        "description": "My personal website, written in HTML and JS and completely self-hosted.",
+        "tags": ["software", "network", "creative"],
+        "external_link": "https://github.com/jjlukose55/portfolio"
     },
     {
-        "title": "Research: \"Humanoid Robots\"",
+        "title": "Research: \"CRII: FET: Neuromorphic Processing Framework for Spatiotemporal Fusion of Visual Sensors\"",
+        "description": "",
+        "tags": ["research", "hardware"],
+        "external_link": ""
+    },
+    {
+        "title": "Research: \"Erza AI: Agentic AI System for Multimodal Human-Robot Collaboration\"",
         "description": "",
         "tags": ["featured", "research", "software"],
-        "external_link": "https://github.com/jjlukose55/"
+        "external_link": ""
     },
     {
         "title": "Tasks",
         "description": "A simple browser based task manager.",
         "tags": ["software", "creative"],
-        "external_link": "https://github.com/jjlukose55/Tasks_WebApp"
+        "external_link": "https://github.com/jjlukose55/tasks"
     }
 ]
