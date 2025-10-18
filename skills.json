@@ -2,105 +2,96 @@
   "categories": [
     {
       "category_name": "Software",
-      "subcategories":[
+      "subcategories": [
         {
-            "subcategory_name": "Programming Languages and Frameworks",
-            "skills": [
-                {
-                "skill_name": "React",
-                "context": "I have used this framework on multiple projects."
-                },
-                {
-                "skill_name": "Python",
-                "context": "The language I most used in my research projects. Have good experience with a lot of ML libraries."
-                },
-                {
-                "skill_name": "JavaScript",
-                "context": "I have written a lot of good and bad JS. Don't read the source cod for this web app."
-                }
-            ]
+          "subcategory_name": "Programming Languages and Frameworks",
+          "skills": [
+            { "skill_name": "JavaScript", "context": "Used for developing interactive web interfaces and full-stack projects." },
+            { "skill_name": "Python", "context": "Applied in research for AI, machine learning model optimization, and prototyping." },
+            { "skill_name": "Java", "context": "Used in courses like Data Structures to develop understanding of ADTs and object-oriented programming." },
+            { "skill_name": "C", "context": "Applied in embedded systems and microcontroller programming assignments." },
+            { "skill_name": "C++", "context": "Used for systems-level programming and algorithmic implementations." },
+            { "skill_name": "Rust", "context": "Learning and applying for memory-safe and concurrent systems programming." },
+            { "skill_name": "VHDL", "context": "Used in FPGA design and simulation projects such as digital logic and LED pattern drivers." },
+            { "skill_name": "Assembly", "context": "Used in coursework to understand low-level CPU operations and stack management." }
+          ]
         },
         {
-            "subcategory_name": "Design",
-            "skills": [
-                {
-                "skill_name": "Figma",
-                "context": "Used to design all of my creative projects."
-                }
-            ]
+          "subcategory_name": "Tools and Software",
+          "skills": [
+            { "skill_name": "Git", "context": "Used for version control and collaborative software development." },
+            { "skill_name": "Xilinx Vivado", "context": "Used for designing, simulating, and implementing FPGA-based systems." },
+            { "skill_name": "LTSpice", "context": "Used to simulate analog and mixed-signal circuits in coursework." },
+            { "skill_name": "MATLAB", "context": "Applied in DSP and signal analysis coursework for mathematical modeling." },
+            { "skill_name": "AutoCAD", "context": "Used for designing schematics in general engineering courses." },
+            { "skill_name": "VBA", "context": "Used for automating repetitive tasks and data processing in Excel." },
+            { "skill_name": "Ansys Electronics", "context": "Used to design and simulate electromagnetic systems such as motors." },
+            { "skill_name": "Autodesk Inventor", "context": "Used for 3D modeling of mechanical components and enclosures." },
+            { "skill_name": "Formlabs Preform", "context": "Used to prepare and print 3D models for research prototypes." }
+          ]
         }
       ]
     },
     {
-      "category_name": "Hardware",
-      "subcategories":[
+      "category_name": "Hardware and Systems",
+      "subcategories": [
         {
-            "subcategory_name": "Electronics",
-            "skills": [
-                {
-                "skill_name": "Solder",
-                "context": "I have had to solder components for class projects and personal projects."
-                }
-            ]
+          "subcategory_name": "Embedded and Computing Systems",
+          "skills": [
+            { "skill_name": "ESP32", "context": "Used in IoT and embedded systems prototyping projects." },
+            { "skill_name": "Raspberry Pi", "context": "Used in AI and robotics research for deploying edge computing models." },
+            { "skill_name": "Jetson Nano", "context": "Used in research for computer vision and multimodal sensor fusion." }
+          ]
         },
         {
-            "subcategory_name": "CAD",
-            "skills": [
-                {
-                "skill_name": "Autodesk Inventor",
-                "context": "The CAD software I use most often."
-                },
-                {
-                "skill_name": "Ansys Electronics",
-                "context": "The software I used for designing the motor for my E-Bike conversion project."
-                }
-            ]
+          "subcategory_name": "Hardware Fabrication and Tools",
+          "skills": [
+            { "skill_name": "Soldering", "context": "Used to assemble and repair circuits for embedded systems and personal projects." },
+            { "skill_name": "MIG Welding", "context": "Used in personal automotive projects for joining metal frames." },
+            { "skill_name": "Ethernet Cabling (CAT6)", "context": "Hand-routed and terminated for reliable home network infrastructure." }
+          ]
         }
       ]
     },
     {
-      "category_name": "Network",
-      "subcategories":[
+      "category_name": "Networking and Infrastructure",
+      "subcategories": [
         {
-            "subcategory_name": "Tools",
-            "skills": [
-                {
-                "skill_name": "Git & GitHub",
-                "context": "Used exstensibly for both solo and team projects."
-                },
-                {
-                "skill_name": "Docker",
-                "context": "Used exstensibly for self-hosting services as well as building containerized development environments."
-                }
-            ]
-        }
-      ]
-    },
-    {
-      "category_name": "Automotive",
-      "subcategories":[
-        {
-            "subcategory_name": "",
-            "skills": [
-                {
-                "skill_name": "",
-                "context": ""
-                }
-            ]
+          "subcategory_name": "Systems Administration and Networking",
+          "skills": [
+            { "skill_name": "Proxmox Hypervisor", "context": "Used to manage and virtualize multiple VMs and Dockerized services in a home lab." },
+            { "skill_name": "Docker", "context": "Used to containerize 20+ services for efficient deployment and isolation." },
+            { "skill_name": "DNS and Reverse Proxy Configuration", "context": "Configured for secure and efficient routing of internal services." },
+            { "skill_name": "VPN and Firewall Management", "context": "Deployed to ensure secure remote access and internal network privacy." }
+          ]
         }
       ]
     },
     {
       "category_name": "Soft Skills",
-      "subcategories":[
+      "subcategories": [
         {
-            "subcategory_name": "",
-            "skills": [
-                {
-                "skill_name": "React",
-                "context": "I have used this framework on multiple projects."
-                }
-            ]
+          "subcategory_name": "Leadership and Collaboration",
+          "skills": [
+            { "skill_name": "Team Leadership", "context": "Served as Vice President of the Computer Engineering Apprentices, mentoring underclassmen and leading club discussions." },
+            { "skill_name": "Cross-Disciplinary Collaboration", "context": "Worked with engineers in Computer Science, Mechanical, and Mechatronics in projects and research." }
+          ]
+        },
+        {
+          "subcategory_name": "Communication and Presentation",
+          "skills": [
+            { "skill_name": "Technical Communication", "context": "Presented research findings at academic symposiums and university events." },
+            { "skill_name": "Documentation", "context": "Maintained detailed technical documentation for research and project deployments." },
+            { "skill_name": "Public Speaking", "context": "Delivered presentations to academic audiences on AI and embedded systems research." }
+          ]
+        },
+        {
+          "subcategory_name": "Problem Solving and Adaptability",
+          "skills": [
+            { "skill_name": "Analytical Thinking", "context": "Troubleshot complex system interactions in AI and networked embedded environments." },
+            { "skill_name": "Adaptability", "context": "Transitioned between software, hardware, and research domains as project needs evolved." },
+            { "skill_name": "Project Management", "context": "Managed multi-stage technical projects with time-sensitive deliverables and interdisciplinary teams." }
+          ]
         }
       ]
     }
