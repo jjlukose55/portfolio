@@ -1,7 +1,7 @@
 [
     {
         "title": "Closet Database",
-        "description": "A React Native app that doubles as an organization tool and a social media.",
+        "description": "An Expo app that doubles as an organization tool and a social media platform.",
         "tags": ["software"],
         "external_link": "https://github.com/jjlukose55/closet-database"
     },

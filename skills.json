@@ -89,8 +89,7 @@
           "subcategory_name": "Problem Solving and Adaptability",
           "skills": [
             { "skill_name": "Analytical Thinking", "context": "Troubleshot complex system interactions in AI and networked embedded environments." },
-            { "skill_name": "Adaptability", "context": "Transitioned between software, hardware, and research domains as project needs evolved." },
-            { "skill_name": "Project Management", "context": "Managed multi-stage technical projects with time-sensitive deliverables and interdisciplinary teams." }
+            { "skill_name": "Adaptability", "context": "Transitioned between software, hardware, and research domains as project needs evolved." }
           ]
         }
       ]
