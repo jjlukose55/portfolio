@@ -61,6 +61,7 @@ function main() {
     // Load new JS
     function loadScript(path, callback) {
         const script = document.createElement("script");
+        script.type="module";
         script.src = path;
         script.onload = callback;
         document.body.appendChild(script);

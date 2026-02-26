@@ -1,0 +1,26 @@
+{
+  "contact": [
+    {
+      "title": "Email",
+      "url": "mailto:inquiries@jjluk.net",
+      "icon": "/assets/images/gmail.svg"
+    }    
+  ],
+  "social": [
+    {
+      "title": "LinkedIn",
+      "url": "https://linkedin.com/in/jluk927",
+      "icon": "/assets/images/linkedin.svg"
+    },
+    {
+      "title": "GitHub",
+      "url": "https://github.com/jjlukose55",
+      "icon": "/assets/images/github.svg"
+    },
+    {
+      "title": "YouTube",
+      "url": "https://youtube.com/@jlukose55",
+      "icon": "/assets/images/youtube.svg"
+    }
+  ]
+}

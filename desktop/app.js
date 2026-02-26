@@ -1,4 +1,8 @@
 console.log("Desktop script is running");
+
+// Import Paths
+import { ASSETS, DATA_SOURCES } from "/config/config.js";
+
 /* CONSTANTS */
 // Pages
 const pages = ['home', 'portfolio', 'skills', 'contact'];
@@ -11,7 +15,7 @@ const navBar = document.querySelector("#nav-bar");
 const butterfly = document.getElementById('butterfly');
 const signature = document.getElementById('signature');
 // Style Variables (Used for dynamic theming)
-const tiles = ['--tile1', '--tile2', '--tile3']; 
+const tiles = ['--tile1', '--tile2', '--tile3'];
 
 function updatePageHTML(link) {
     fetch(link)
@@ -39,7 +43,7 @@ function updatePageHTML(link) {
 
 }
 
-function elementFromHTML(html){
+function elementFromHTML(html) {
     const template = document.createElement("template");
     template.innerHTML = html.trim();
     return template.content.firstElementChild;
@@ -62,19 +66,19 @@ function attachNAVListeners() {
             body.classList.replace(page.id, matchedPage.trim());
             page.id = matchedPage.trim();
             console.log(`navigated to ${page.id}`);
-        },  { once: true }); // prevent multiple duplicate listeners
+        }, { once: true }); // prevent multiple duplicate listeners
     });
     // Backdrop
     // Listen for the scroll event on the window
     window.addEventListener('scroll', () => {
-    // Check if the user has scrolled more than 10 pixels
-    if (window.scrollY > 10) {
-        // If yes, add the 'scrolled' class
-        nav.classList.add('scrolled');
-    } else {
-        // If not, remove the 'scrolled' class
-        nav.classList.remove('scrolled');
-    }
+        // Check if the user has scrolled more than 10 pixels
+        if (window.scrollY > 10) {
+            // If yes, add the 'scrolled' class
+            nav.classList.add('scrolled');
+        } else {
+            // If not, remove the 'scrolled' class
+            nav.classList.remove('scrolled');
+        }
     });
 }
 
@@ -82,7 +86,7 @@ function attachNAVListeners() {
 let projects = []; // Variable to store the parsed JSON data
 async function parseJSON() {
     try {
-        const response = await fetch('/projects.json'); // Adjust the path as necessary
+        const response = await fetch(DATA_SOURCES.projects);
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
@@ -189,7 +193,7 @@ function main() {
         function createTagElements() {
             tags.forEach(tag => {
                 // tag onclick function
-                function tagOnClick (element) {
+                function tagOnClick(element) {
                     console.log('clicked ' + element.id);
                     if (element.classList.contains("selected")) {
                         element.classList.remove("selected");
@@ -212,11 +216,11 @@ function main() {
                 // existing tags
                 if (tag === "all") {
                     allTag.addEventListener('click', () => tagOnClick(allTag))
-                    return; 
+                    return;
                 }
                 if (tag === "featured") {
                     featuredTag.addEventListener('click', () => tagOnClick(featuredTag))
-                    return; 
+                    return;
                 }
 
                 const newTagElement = document.createElement("div");
@@ -332,7 +336,7 @@ function main() {
                 });
 
                 const listItem = template.firstChild; // Get the first actual element
-                
+
                 // Hover enlarge and highlight
                 listItem.addEventListener('mouseover', () => {
                     listItem.style.backgroundColor = "hsla(0, 0%, 100%, .4)";
@@ -365,10 +369,11 @@ function main() {
         }
 
         loadData();
-    };if (skillsPage) {
+    };
+    if (skillsPage) {
         // Constants 
         const skillsContainer = document.getElementById('skillsContainer');
-        const skillsJsonPath = 'skills.json'; // Path to your skills data file
+        const skillsJsonPath = DATA_SOURCES.skills;
 
         // An array of color classes to cycle through for each category
         const colorClasses = ['colorOne', 'colorTwo', 'colorThree', 'colorFour'];
@@ -381,7 +386,7 @@ function main() {
             const collapsibles = skillsContainer.querySelectorAll('.collapsible');
 
             collapsibles.forEach(clickedCollapsible => {
-                clickedCollapsible.addEventListener('click', function(event) {
+                clickedCollapsible.addEventListener('click', function (event) {
                     // 1. STOP PROPAGATION: Prevent the click from affecting parent collapsibles.
                     event.stopPropagation();
 
@@ -394,15 +399,15 @@ function main() {
                     // --- 2. SIBLING-ONLY LOGIC ---
                     const parent = this.parentElement;
                     const siblings = parent.querySelectorAll(':scope > .collapsible');
-                    
+
                     siblings.forEach(sibling => {
                         if (sibling !== this) {
                             const siblingItems = sibling.querySelector('.expandable');
                             const siblingCaret = sibling.querySelector('.collapse-icon');
-                            
+
                             if (siblingItems) {
-                                 siblingItems.classList.remove('expanded');
-                                 sibling.setAttribute('aria-expanded', 'false');
+                                siblingItems.classList.remove('expanded');
+                                sibling.setAttribute('aria-expanded', 'false');
                             }
                             if (siblingCaret) {
                                 siblingCaret.classList.remove('rotated');
@@ -413,7 +418,7 @@ function main() {
                     // --- Toggle the state of the clicked collapsible ---
                     items.classList.toggle('expanded');
                     if (caret) caret.classList.toggle('rotated');
-                    
+
                     this.setAttribute('aria-expanded', items.classList.contains('expanded'));
                 });
             });
@@ -432,7 +437,7 @@ function main() {
                 const response = await fetch(skillsJsonPath);
                 if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                 const data = await response.json();
-                
+
                 skillsContainer.innerHTML = ''; // Clear the 'Loading...' message
 
                 data.categories.forEach((category, index) => {
@@ -445,7 +450,7 @@ function main() {
                             </div>
                         `).join('');
 
-                        const subcategoryTitle = subcategory.subcategory_name 
+                        const subcategoryTitle = subcategory.subcategory_name
                             ? `<span class="text subtext underline bold">${subcategory.subcategory_name}</span>`
                             : '';
 
@@ -482,58 +487,110 @@ function main() {
         loadSkills();
     }
     if (contactPage) {
-        // Code for Contact-card Email
-        const emailLink = document.getElementById('emailLink');
-        const email = "JJLukose55@gmail.com"; // Your email address
+        function showModal() {
+            const modal = document.getElementById('contactDialog');
+            modal.showModal();
+            // Close modal when clicking outside
+            modal.addEventListener("click", e => {
+                const dialogDimensions = modal.getBoundingClientRect();
+                if (
+                    e.clientX < dialogDimensions.left ||
+                    e.clientX > dialogDimensions.right ||
+                    e.clientY < dialogDimensions.top ||
+                    e.clientY > dialogDimensions.bottom
+                ) {
+                    modal.close();
+                }
+            });
+        }
 
-        emailLink.addEventListener('click', (event) => {
-            event.preventDefault(); // Prevent default anchor behavior
-
-            // check if clipboard is available
-            if (navigator.clipboard) {
-                // Copy email to clipboard
-                navigator.clipboard.writeText(email).then(() => {
-                    console.log("Email address copied to clipboard!");
-                    // Show a notification here
-                    const modal = document.getElementById('contactDialog');
-                    modal.showModal();
-                    // Close Modal when clicking outside
-                    modal.addEventListener("click", e => {
-                        const dialogDimensions = modal.getBoundingClientRect()
-                        if (
-                            e.clientX < dialogDimensions.left ||
-                            e.clientX > dialogDimensions.right ||
-                            e.clientY < dialogDimensions.top ||
-                            e.clientY > dialogDimensions.bottom
-                        ) {
-                            modal.close();
-                        }
-                    })
-                }).catch(err => {
-                    console.error("Failed to copy: ", err);
-                    // Show a notification here
-                    const modal = document.getElementById('contactDialog');
-                    modal.showModal();
-                    // Close Modal when clicking outside
-                    modal.addEventListener("click", e => {
-                        const dialogDimensions = modal.getBoundingClientRect()
-                        if (
-                            e.clientX < dialogDimensions.left ||
-                            e.clientX > dialogDimensions.right ||
-                            e.clientY < dialogDimensions.top ||
-                            e.clientY > dialogDimensions.bottom
-                        ) {
-                            modal.close();
-                        }
-                    })
+        function attachEmailListeners() {
+            document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const email = link.href.replace('mailto:', '');
+                    if (navigator.clipboard) {
+                        navigator.clipboard.writeText(email)
+                            .then(() => {
+                                console.log("Email address copied to clipboard!");
+                                showModal();
+                            })
+                            .catch(err => {
+                                console.error("Failed to copy: ", err);
+                                showModal();
+                            });
+                    } else {
+                        console.error("Clipboard API is unavailable.");
+                    }
                 });
-            } else {
-                console.error("Clipboard API is unavailable.");
-            }
+            });
+        }
 
-            // Redirect to the mail client
-            //window.location.href = `mailto:${email}`;
-        });
+        // Function to fetch and populate contact data
+        async function populateContactData() {
+            try {
+                // Fetch data from JSON file
+                const response = await fetch(DATA_SOURCES.contact);
+                const data = await response.json();
+
+                // Get contact card elements
+                const contactItemsContainer = document.querySelector('#contact-items');
+                const socialItemsContainer = document.querySelector('#social-items');
+
+                // Populate contact items
+                data.contact.forEach(item => {
+                    const linkElement = document.createElement('a');
+                    linkElement.href = item.url;
+                    linkElement.target = '_blank';
+                    linkElement.rel = 'noopener noreferrer';
+                    linkElement.className = 'item contact-card';
+
+                    const imgElement = document.createElement('img');
+                    imgElement.src = item.icon;
+                    imgElement.alt = item.title;
+                    imgElement.className = 'socialIcons';
+
+                    const divElement = document.createElement('div');
+                    divElement.className = 'subtext text';
+                    divElement.textContent = item.title;
+
+                    linkElement.appendChild(imgElement);
+                    linkElement.appendChild(divElement);
+                    contactItemsContainer.appendChild(linkElement);
+                });
+
+                // Populate social items
+                data.social.forEach(item => {
+                    const linkElement = document.createElement('a');
+                    linkElement.href = item.url;
+                    linkElement.target = '_blank';
+                    linkElement.rel = 'noopener noreferrer';
+                    linkElement.className = 'item contact-card';
+
+                    const imgElement = document.createElement('img');
+                    imgElement.src = item.icon;
+                    imgElement.alt = item.title;
+                    imgElement.className = 'socialIcons';
+
+                    const divElement = document.createElement('div');
+                    divElement.className = 'subtext text';
+                    divElement.textContent = item.title;
+
+                    linkElement.appendChild(imgElement);
+                    linkElement.appendChild(divElement);
+                    socialItemsContainer.appendChild(linkElement);
+                });
+
+                // Attach email listener after DOM is populated
+                attachEmailListeners();
+
+            } catch (error) {
+                console.error('Error loading contact data:', error);
+            }
+        }
+
+        // Initialize the script when the page loads
+        populateContactData();
 
     };
 }
